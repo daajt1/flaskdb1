@@ -1,0 +1,22 @@
+import pymsql
+
+conexion = pymsql.connect(
+host = "localhost",
+user="daniel",
+password="2021daniel",
+database ="pruebamysql"
+
+)
+
+cursor = conexion.cursor()
+
+Cursos = """CREATE TABLE Cursos(
+  Curso VARCHAR(20),
+  Tematica CHAR(10),
+  PRIMARY KEY (Cursoid)"""
+)
+
+cursor.execute(Cursos)
+print('agregado registro a cursos')
+
+conexion.close()
